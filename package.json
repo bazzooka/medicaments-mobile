@@ -1,0 +1,48 @@
+{
+  "name": "Medicaments-mobile",
+  "version": "1.0.0",
+  "description": "Medicament mobile app",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "react-sidebar": "^1.0.2",
+    "react-tap-event-plugin": "^0.1.7"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "glob": "^5.0.10",
+    "gulp-babel": "^5.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-if": "^1.2.5",
+    "gulp-livereload": "^3.8.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-order": "^1.1.1",
+    "gulp-sass": "^2.0.1",
+    "gulp-shell": "^0.4.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bazzooka/medicaments-mobile"
+  },
+  "author": "omegasolutions.fr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bazzooka/medicaments-mobile/issues"
+  },
+  "homepage": "https://github.com/bazzooka/medicaments-mobile"
+}
