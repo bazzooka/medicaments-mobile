@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var babel = require('gulp-babel');
 var browserify = require('browserify');
@@ -18,10 +19,11 @@ var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
 var order = require("gulp-order");
+var flatten = require("gulp-flatten");
 
 var dependencies = [
-    'react', // react is part of this boilerplate
-    'react/addons'
+    //'react', // react is part of this boilerplate
+    //'react/addons'
 ];
 
 var browserifyTask = function(options){
@@ -55,6 +57,7 @@ var browserifyTask = function(options){
                 });
             })
             .pipe(source(options.src))
+            .pipe(flatten())
             //.pipe(babel())
             .pipe(gulpif(!options.development, streamify(uglify())))
             .pipe(gulp.dest(options.dest))
@@ -87,6 +90,7 @@ var browserifyTask = function(options){
     vendorsBundler.bundle()
         .on('error', gutil.log)
         .pipe(source('www/js/vendors.js'))
+        .pipe(flatten())
         .pipe(gulpif(!options.development, streamify(uglify())))
         .pipe(gulp.dest(options.dest))
         .pipe(notify(function () {
