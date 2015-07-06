@@ -1,4 +1,5 @@
 @import "home";
+@import "menu";
 
 a.menu-entry {
   display: block;
@@ -13,21 +14,10 @@ a.menu-entry {
 	}
 }
 
-.menu-container {
-	position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 25%;
-    background-color: whitesmoke;
-
-    transition: transform 0.5s;
-    transform: translate3d(-100%, 0, 0);
-
-    &.open{
-    	transform: translate3d(0, 0, 0);
-    }
+.content-container{
+    padding-left: 20px;
 }
+
 
 .navBar-content{
     height: 5%;

@@ -1,6 +1,7 @@
-var director = require('director');
-var Router = director.Router;
+import director from 'director';
+import EventController from '../EventController';
 
+var Router  = director.Router;
  
 class ViewManager {
 	/**
@@ -27,6 +28,10 @@ class ViewManager {
 		}
 	}
 
+	requestRoutage(route){
+		console.log(route);
+	}
+
 	showPage(instance){
 		document.getElementById(this.currentPage).classList.remove("current");
 		document.getElementById(instance.id).classList.add("current");
@@ -48,6 +53,8 @@ class ViewManager {
 		this.routes[page.route] = function(){
 			this.showPage(instance);
 		}.bind(this);
+
+		instance.init && instance.init();
 
 	}
 

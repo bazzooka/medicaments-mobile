@@ -1,4 +1,5 @@
 import Page from '../components/Page.js';
+import NavBar from '../components/NavBar.js';
 
 class HomePage extends Page{
 	constructor(options){
@@ -20,22 +21,6 @@ class HomePage extends Page{
 
 	}
 
-	// render(isDefault){
-	// 	var pageFrag = document.createDocumentFragment();
-	// 	var pageElem = document.createElement('div');
-	// 	pageElem.id = "home-page";
-	// 	pageElem.className += "page home-page" + (isDefault ? " current" : "");
-
-
-	// 	for(var i = 0; i < 1000; i++){
-	// 		pageElem.innerHTML += "RENDERED HOME TEMPLATE AS STRING";	
-	// 	}
-		
-
-	// 	pageFrag.appendChild(pageElem);
-
-	// 	return pageFrag;
-	// }
 };
 
 

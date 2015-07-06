@@ -1,6 +1,5 @@
 // var main = require('../jsx/main.jsx');
 var ViewManager = require('./components/ViewManager.js');
-var NavBar = require('./components/NavBar.js');
 var SideMenu = require('./components/SideMenu.js');
 var HomePage = require('./pages/HomePage.js'); 
 var FavoritePage = require('./pages/FavoritePage.js'); 
@@ -25,7 +24,11 @@ class App {
 			]
 		});
 
-		this.sideMenu = new SideMenu({sideMenuId: "menu-container"});
+		this.sideMenu = new SideMenu({
+			menuId: "menu-container",
+			sideMenuId: "side-menu",
+			triggerDistance: "20"
+		});
 	}
 }
 

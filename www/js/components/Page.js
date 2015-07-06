@@ -1,3 +1,5 @@
+import NavBar from '../components/NavBar.js';
+
 class Page {
 	 constructor(options){
  		this.id = options.id;
