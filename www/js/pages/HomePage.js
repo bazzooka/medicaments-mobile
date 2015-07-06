@@ -1,5 +1,5 @@
 import Page from '../components/Page.js';
-import NavBar from '../components/NavBar.js';
+
 
 class HomePage extends Page{
 	constructor(options){
