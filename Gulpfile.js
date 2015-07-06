@@ -20,6 +20,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
 var order = require("gulp-order");
 var flatten = require("gulp-flatten");
+var dot = require('gulp-dot-precompiler');
+var header = require('gulp-header');
 
 var dependencies = [
     //'react', // react is part of this boilerplate
@@ -32,7 +34,7 @@ var browserifyTask = function(options){
         transform: [babelify],
         debug: options.development, // Sourcemapping
         cache: {}, packageCache: {}, fullPaths: true, // Requirement of watchify
-    });
+    }); 
 
 
 
@@ -122,6 +124,23 @@ var sassTask = function(options){
     }
 };
 
+var dotTask = function(options){
+    var compileDot =  function(){
+        var start = Date.now();
+        gulp.src(options.src)
+            .pipe(flatten())
+            .pipe(dot())
+            .pipe(concat('templates.js'))
+            .pipe(header('window.render = {};'))
+            .pipe(gulp.dest(options.dest))
+            .pipe(notify(function () {
+                console.log('DOT Compilation ' + (Date.now() - start) + 'ms');
+            }));
+    };
+    compileDot();
+    gulp.watch(options.src, compileDot);
+};
+
 
 // Starts our development workflow
 gulp.task('default', function () {
@@ -134,6 +153,11 @@ gulp.task('default', function () {
         src: './www/js/app.js',
         dest: './www/build/',
         vendorsSrc: ['./www/lib/jquery/jquery.min.js']
+    });
+
+    dotTask({
+        src: ['./www/template/*.dot'],
+        dest: './www/build'
     });
 
     sassTask({

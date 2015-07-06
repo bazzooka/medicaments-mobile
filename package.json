@@ -4,6 +4,8 @@
   "description": "Medicament mobile app",
   "main": "Gulpfile.js",
   "dependencies": {
+    "director": "^1.2.8",
+    "dot": "^1.0.3",
     "gulp": "^3.9.0",
     "jquery": "^2.1.4",
     "react": "^0.13.3",
@@ -19,7 +21,9 @@
     "gulp-babel": "^5.1.0",
     "gulp-concat": "^2.5.2",
     "gulp-cssmin": "^0.1.7",
+    "gulp-dot-precompiler": "^0.3.0",
     "gulp-flatten": "^0.1.0",
+    "gulp-header": "^1.2.2",
     "gulp-if": "^1.2.5",
     "gulp-livereload": "^3.8.0",
     "gulp-notify": "^2.2.0",
